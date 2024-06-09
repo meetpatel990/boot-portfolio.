@@ -132,10 +132,41 @@
                         <div class="swiper-slide">
                             <div class="card h-100">
                                 <div class="card-body">
+                                    <img src="pho12.png" alt="Project 3" class="img-fluid">
+                                    <h5 class="card-title pt-3 h4">Food Hub</h5>
+                                    <a href="https://githubmeet.github.io/template2/" class="btn btn-dark btn-lg">Live
+                                        Demo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <img src="pho10.png" alt="Project 3" class="img-fluid">
+                                    <h5 class="card-title pt-3 h4">Apexa</h5>
+                                    <a href="https://githubmeet.github.io/my-first/" class="btn btn-dark btn-lg">Live
+                                        Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <img src="pho11.png" alt="Project 3" class="img-fluid">
+                                    <h5 class="card-title pt-3 h4">Bizops</h5>
+                                    <a href="https://githubmeet.github.io/Bizops/" class="btn btn-dark btn-lg">Live
+                                        Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card h-100">
+                                <div class="card-body">
                                     <img src="pho1.png" alt="Project 1" class="img-fluid">
                                     <h4 class="card-title pt-3 h4">Magnet</h5>
-                                        <a href="https://githubmeet.github.io/magnet/"
-                                            class="btn btn-dark btn-lg">Live Demo</a>
+                                        <a href="https://githubmeet.github.io/magnet/" class="btn btn-dark btn-lg">Live
+                                            Demo</a>
                                 </div>
                             </div>
                         </div>
@@ -222,6 +253,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <!-- <div class="swiper-button-next"></div>
@@ -233,7 +265,7 @@
             <div class="container px-4 text-center mb-sm-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <h6 class="h6 mb-1 text-center text-dark">Get in Touch</h6>
+                        <h6 class="h6 mb-1 pt-2 text-center text-dark">Get in Touch</h6>
                         <h1 class="title mb-4">Contact Me</h1>
                         <form class="contact-form" id="contactForm">
                             <div class="mb-3">
@@ -277,7 +309,7 @@
                 </ul>
             </div>
         </footer>
-       
+
 
         <footer class="copyright">
             <div class="container-fluid text-light text-center"
@@ -302,50 +334,67 @@
             </div>
             </div>
         </footer>
+        <button id="back-to-top" class="btn btn-primary">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="contact-form.js"></script>
     </section>
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".card-slider", {
-            //   slidesPerView: 3,
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
             spaceBetween: 30,
-            keyboard: {
-                enabled: true,
-            },
             pagination: {
-                el: ".swiper-pagination",
+                el: '.swiper-pagination',
                 clickable: true,
             },
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            keyboard: {
+                enabled: true,
             },
             breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    //   spaceBetween: 20,
-                },
-                480: {
-                    slidesPerView: 2,
-                    //   spaceBetween: 20,
+                1024: {
+                    slidesPerView: 3,
                 },
                 768: {
                     slidesPerView: 2,
-                    //   spaceBetween: 40,
                 },
-                
-                1024: {
-                    slidesPerView: 3,
-                    //   spaceBetween: 50,
+                640: {
+                    slidesPerView: 1,
                 },
-                1200: {
-                    slidesPerView: 3,
-                    //   spaceBetween: 50,
+                320: {
+                    slidesPerView: 1,
                 },
             },
+        });
 
+        // Back to Top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
