@@ -1,20 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-body {
-  background-color: #ededed;
-  font-family: "Roboto", sans-serif;
 
+:root {
+  --primary-bg: #ededed;
+  --navbar-bg: #212529;
+  --text-color: white;
+  --card-bg: #ffffffd1;
+  --button-bg: #212529;
+  --footer-bg: #212529;
+  --scrollbar-thumb: #212529;
+}
+
+body {
+  background-color: var(--primary-bg);
+  font-family: "Roboto", sans-serif;
+  position: relative;
 }
 
 .navbar {
-  background-color: #212529;
-  color: white;
+  background-color: var(--navbar-bg);
+  color: var(--text-color);
 }
+
 .btn-close-white {
-  color: #fff;
+  color: var(--text-color);
   background-color: transparent; 
   border-color: transparent; 
 }
+
 .main-img {
   width: 60%;
   margin-left: 39%;
@@ -39,7 +52,6 @@ body {
   .main-img {
     width: 70%;
     margin-top: 0;
-    /* margin-bottom: -45px; */
   }
 
   .sub-body {
@@ -53,18 +65,22 @@ body {
     margin-top: 20px;
     display: block;
   }
+
   .main {
     margin-left: 50px;
   }
-  .learnings img{
+
+  .learnings img {
     width: 20%;
   }
 }
+
 @media screen and (max-width: 767px) {
-  .contact{
+  .contact {
     margin-bottom: 75px;
   }
 }
+
 @media screen and (max-width: 991px) {
   .sub-body {
     padding: 1px;
@@ -86,29 +102,32 @@ body {
     display: block;
   }
 
-
   .main {
     margin-left: 25px;
     margin-top: 20px;
-}
-.learnings img{
-  width: 18%;
-}
-.about1-main img{
-  width: 10%;
-}
-.about2-main img{
-  width: 10%;
-}
-.contact{
-  background-color: #ffffffd8;
-  margin: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
-}
+  }
+
+  .learnings img {
+    width: 18%;
+  }
+
+  .about1-main img {
+    width: 10%;
+  }
+
+  .about2-main img {
+    width: 10%;
+  }
+
+  .contact {
+    background-color: var(--card-bg);
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
 }
 
 .social a {
@@ -122,9 +141,8 @@ body {
 
 .card {
   border-radius: 20px;
-  /* padding: 10px; */
   border: none;
-  background-color: #ffffffd8;
+  background-color: var(--card-bg);
 }
 
 .card img {
@@ -134,28 +152,17 @@ body {
 .project {
   margin-left: auto;
 }
-.about1-main img{
+
+.about1-main img, .about2-main img {
   width: 8%;
 }
-.about2-main img{
-  width: 8%;
-}
-.about1-main {
+
+.about1-main, .about2-main, .skills {
   margin-top: 20px;
-  background-color: #ffffffd8;
+  background-color: var(--card-bg);
   border-radius: 20px;
 }
-.about2-main {
-  margin-top: 20px;
-  background-color: #ffffffd8;
-  border-radius: 20px;
-}
-.skills {
-  margin-top: 20px;
-  background-color: #ffffffd8;
-  border-radius: 20px;
-  /* padding-left: 5px; */
-}
+
 .footer-btn {
   display: block;
   position: fixed;
@@ -167,15 +174,15 @@ body {
   width: 55px;
   height: 54px;
   border-radius: 30px;
-  background-color: #212529;
+  background-color: var(--navbar-bg);
   z-index: 1000;
-  padding: -2px;
   padding-top: 6px;
   padding-right: 9px;
   font-size: 2rem;
 }
-.contact{
-  background-color: #ffffffd8;
+
+.contact {
+  background-color: var(--card-bg);
   margin: 20px;
   padding-top: 20px;
   padding-bottom: 1px;
@@ -183,27 +190,22 @@ body {
   margin-left: 200px;
   margin-right: 200px;
 }
-.learnings img{
+
+.learnings img {
   width: 13%;
 }
 
-.btn{
-  background-color: #212529;
+.btn {
+  background-color: var(--button-bg);
   border-radius: 12px;
 }
 
-
-
-
-
-
 /* Footer Navigation (Mobile Only) */
 .footer-nav-mobile {
-  display: none; /* Initially hide on all screens */
+  display: none;
 }
 
 @media (max-width: 767px) {
-  /* Show footer navigation only on mobile devices */
   .footer-nav-mobile {
     display: block;
     position: fixed;
@@ -212,23 +214,17 @@ body {
     margin-right: 20px;
     margin-top: 139px;
     bottom: 5px;
-    /* left: 0; */
     width: 95%;
     height: 52px;
     border-radius: 60px;
-    background-color: #212529;
+    background-color: var(--footer-bg);
     z-index: 1000;
-}
-
- /* .nav :hover{
-  color: #7e7e7e;
-} */
+  }
 
   .footer-nav-mobile .nav {
     display: flex;
     justify-content: space-around;
     padding: 5px 0;
-    
   }
 
   .footer-nav-mobile .nav-item {
@@ -246,81 +242,79 @@ body {
   .footer-nav-mobile .nav-link i {
     margin-right: 5px;
   }
-  .footers{
-    display: none!Important;
+
+  .footers {
+    display: none !important;
   }
-  .learnings img{
+
+  .learnings img {
     width: 18%;
   }
-  .about1-main img{
+
+  .about1-main img, .about2-main img {
     width: 10%;
   }
-  .about2-main img{
-    width: 10%;
-  }
-  .contact{
-    background-color: #ffffffd8;
+
+  .contact {
+    background-color: var(--card-bg);
     margin: 20px;
     padding-top: 20px;
     padding-bottom: 30px;
     border-radius: 20px;
     margin-bottom: 100px;
   }
-   .copyright {
+
+  .copyright {
     display: none;
+  }
 }
-}
+
 .swiper-pagination {
   position: static; 
   margin-top: 8px;
   margin-bottom: 40px;
 }
+
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
   background: black;
 }
 
-
-
-
-
-
 ::-webkit-scrollbar {
-  width: 1px; /* Width of the scrollbar */
+  width: 1px;
   border-radius: 30px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color of the track */
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #212529;
-  border-radius: 5px; /* Roundness of the handle */
+  background-color: var(--scrollbar-thumb);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #212529;
+  background-color: var(--scrollbar-thumb);
 }
 
 /* Firefox */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #212529 #f1f1f1;
+  scrollbar-color: var(--scrollbar-thumb) #f1f1f1;
 }
 
 /* Mobile view */
 @media (max-width: 767px) {
   ::-webkit-scrollbar {
-      width: 1px; /* Adjust the width for mobile view */
+    width: 1px;
   }
 
   html {
-      scrollbar-width: thin;
-      scrollbar-color: #212529 #f1f1f1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) #f1f1f1;
   }
 }
-
 
 #back-to-top {
   position: fixed;
@@ -328,10 +322,8 @@ html {
   right: 20px;
   display: none;
   font-size: 24px;
-  background-color: #212529;
-  /* Yellow */
-  color: #ffffff;
-  /* Dark grey */
+  background-color: var(--navbar-bg);
+  color: var(--text-color);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -344,4 +336,3 @@ html {
 #back-to-top:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-
